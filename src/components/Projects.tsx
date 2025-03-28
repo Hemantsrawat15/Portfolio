@@ -7,7 +7,7 @@ import obys from "../../public/obys.png";
 import netflix_homepage from "../../public/netflix_homepage.png";
 import BharatBulletin from "../../public/BharatBulletin.png";
 
-function AboutMe() {
+function Projects() {
   const tabs = [
     {
       title: "Netflix Clone",
@@ -70,4 +70,4 @@ const DummyContent: React.FC<DummyContentProps> = ({ imageSrc }) => {
   );
 };
 
-export default AboutMe;
+export default Projects;

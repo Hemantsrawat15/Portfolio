@@ -17,70 +17,69 @@ import mongodb from "./icons/mongodb.svg";
 
 function TechStack() {
   return (
-    <div className="min-h-screen rounded-md flex flex-col items-center justify-center gap-3 relative w-full overflow-hidden">
-
+    <div className="min-h-screen flex flex-col items-center justify-center gap-6 relative w-full overflow-hidden px-4 md:px-8">
       {/* Stars background */}
       <StarsBackground className="z-0" />
 
       {/* Title */}
-      <div className="relative z-10 h-[8%] w-[90%] flex px-10 py-2 justify-center items-center font-md text-white rounded-md shadow-md">
-        <h1 className="text-3xl">My Tech Stack</h1>
+      <div className="relative z-10 w-full max-w-4xl px-6 py-4 text-center text-white rounded-md shadow-md">
+        <h1 className="text-xl md:text-2xl font-medium">My Tech Stack</h1>
       </div>
 
       {/* Main Container */}
-      <div className="relative z-10 h-[60%] w-[70%] flex flex-col px-10 py-2 gap-4 rounded-md shadow-lg">
-        {/* Languages Section */}
-        <div className="flex-1 flex p-4 rounded-lg shadow-lg">
-          <div className="w-[40%] flex justify-start items-center p-4 rounded-md shadow-md">
-            <h1 className="text-3xl">Languages</h1>
+      <div className="relative z-10 w-full max-w-4xl flex flex-col gap-6 rounded-md shadow-lg p-6">
+        {/* Section Component */}
+        {sections.map(({ title, icons }) => (
+          <div key={title} className="flex flex-col md:flex-row items-center gap-4 md:gap-8 p-4 rounded-lg shadow-lg">
+            <div className="w-full md:w-1/3 text-center md:text-left">
+              <h2 className="text-lg md:text-xl font-medium text-white">{title}</h2> {/* Added text-white */}
+            </div>
+            <div className="w-full md:w-2/3 flex flex-wrap justify-center gap-6">
+              {icons.map((icon, idx) => (
+                <Image key={idx} src={icon.src} alt={icon.alt} className={`h-12 w-12 md:h-16 md:w-16 object-contain ${icon.alt === 'Express.js' ? 'invert' : ''}`} />
+              ))}
+            </div>
           </div>
-          <div className="w-[60%] flex justify-start items-center gap-12 p-4 rounded-md shadow-md">
-            <Image src={java} alt="Java" className="h-16 w-16 object-contain" />
-            <Image src={js} alt="JavaScript" className="h-16 w-16 object-contain" />
-            <Image src={c} alt="C" className="h-16 w-16 object-contain" />
-            <Image src={python} alt="Python" className="h-16 w-16 object-contain" />
-          </div>
-        </div>
-
-        {/* Frontend Technologies */}
-        <div className="flex-1 flex p-4 rounded-lg shadow-lg">
-          <div className="w-[40%] flex justify-start items-center p-4 rounded-md shadow-md">
-            <h1 className="text-3xl">Frontend Technologies</h1>
-          </div>
-          <div className="w-[60%] flex justify-start items-center gap-12 p-4 rounded-md shadow-md">
-            <Image src={html} alt="HTML" className="h-16 w-16 object-contain" />
-            <Image src={css} alt="CSS" className="h-16 w-16 object-contain" />
-            <Image src={react} alt="React" className="h-16 w-16 object-contain" />
-            <Image src={tailwind} alt="Tailwind" className="h-16 w-16 object-contain" />
-            <Image src={bootstrap} alt="Bootstrap" className="h-16 w-16 object-contain" />
-          </div>
-        </div>
-
-        {/* Backend Technologies */}
-        <div className="flex-1 flex p-4 rounded-lg shadow-lg">
-          <div className="w-[40%] flex justify-start items-center p-4 rounded-md shadow-md">
-            <h1 className="text-3xl">Backend Technologies</h1>
-          </div>
-          <div className="w-[60%] flex justify-start items-center gap-12 p-4 rounded-md shadow-md">
-            <Image src={nodejs} alt="Node.js" className="h-16 w-16 object-contain" />
-            <Image src={expressjs} alt="Express.js" className="h-16 w-16 object-contain filter invert" />
-            <Image src={firebase} alt="Firebase" className="h-16 w-16 object-contain" />
-          </div>
-        </div>
-
-        {/* Database */}
-        <div className="flex-1 flex p-4 rounded-lg shadow-lg">
-          <div className="w-[40%] flex justify-start items-center p-4 rounded-md shadow-md">
-            <h1 className="text-3xl">Database</h1>
-          </div>
-          <div className="w-[60%] flex justify-start items-center gap-12 p-4 rounded-md shadow-md">
-            <Image src={mongodb} alt="MongoDB" className="h-16 w-16 object-contain" />
-          </div>
-        </div>
+        ))}
       </div>
-
     </div>
   );
 }
+
+const sections = [
+  {
+    title: "Languages",
+    icons: [
+      { src: java, alt: "Java" },
+      { src: js, alt: "JavaScript" },
+      { src: c, alt: "C" },
+      { src: python, alt: "Python" },
+    ],
+  },
+  {
+    title: "Frontend Technologies",
+    icons: [
+      { src: html, alt: "HTML" },
+      { src: css, alt: "CSS" },
+      { src: react, alt: "React" },
+      { src: tailwind, alt: "Tailwind" },
+      { src: bootstrap, alt: "Bootstrap" },
+    ],
+  },
+  {
+    title: "Backend Technologies",
+    icons: [
+      { src: nodejs, alt: "Node.js" },
+      { src: expressjs, alt: "Express.js" },
+      { src: firebase, alt: "Firebase" },
+    ],
+  },
+  {
+    title: "Database",
+    icons: [
+      { src: mongodb, alt: "MongoDB" },
+    ],
+  },
+];
 
 export default TechStack;

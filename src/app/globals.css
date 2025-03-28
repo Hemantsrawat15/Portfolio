@@ -65,12 +65,12 @@ body {
 /* Light mode styles (default) */
 body {
   background-color: white;
-  color: black;
+  color: #0A0A0A;
   transition: background-color 0.3s, color 0.3s;
 }
 
 /* Dark mode styles */
 html.dark body {
-  background-color: black;
+  background-color: #0A0A0A;
   color: white;
 }
