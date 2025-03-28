@@ -61,3 +61,16 @@ body {
 .no-visible-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* Light mode styles (default) */
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode styles */
+html.dark body {
+  background-color: black;
+  color: white;
+}

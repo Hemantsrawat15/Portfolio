@@ -1,35 +1,37 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 
 type Tab = {
   title: string;
   value: string;
-  content?: string | React.ReactNode | any;
+  content?: React.ReactNode;
 };
 
-export const Tabs = ({
-  tabs: propTabs,
-  containerClassName,
-  activeTabClassName,
-  tabClassName,
-  contentClassName,
-}: {
+interface TabsProps {
   tabs: Tab[];
   containerClassName?: string;
   activeTabClassName?: string;
   tabClassName?: string;
   contentClassName?: string;
+}
+
+export const Tabs: React.FC<TabsProps> = ({
+  tabs: propTabs,
+  containerClassName,
+  activeTabClassName,
+  tabClassName,
+  contentClassName,
 }) => {
   const [active, setActive] = useState<Tab>(propTabs[0]);
   const [tabs, setTabs] = useState<Tab[]>(propTabs);
 
   const moveSelectedTabToTop = (idx: number) => {
     const newTabs = [...propTabs];
-    const selectedTab = newTabs.splice(idx, 1);
-    newTabs.unshift(selectedTab[0]);
+    const selectedTab = newTabs.splice(idx, 1)[0];
+    newTabs.unshift(selectedTab);
     setTabs(newTabs);
     setActive(newTabs[0]);
   };
@@ -47,15 +49,11 @@ export const Tabs = ({
         {propTabs.map((tab, idx) => (
           <button
             key={tab.title}
-            onClick={() => {
-              moveSelectedTabToTop(idx);
-            }}
+            onClick={() => moveSelectedTabToTop(idx)}
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
             className={cn("relative px-4 py-2 rounded-full", tabClassName)}
-            style={{
-              transformStyle: "preserve-3d",
-            }}
+            style={{ transformStyle: "preserve-3d" }}
           >
             {active.value === tab.value && (
               <motion.div
@@ -79,26 +77,26 @@ export const Tabs = ({
         active={active}
         key={active.value}
         hovering={hovering}
-        className={cn("mt-8", contentClassName)} // Reduced margin-top from mt-32 to mt-8
+        className={cn("mt-8", contentClassName)}
       />
     </>
   );
 };
 
-export const FadeInDiv = ({
-  className,
-  tabs,
-  hovering,
-}: {
+interface FadeInDivProps {
   className?: string;
-  key?: string;
   tabs: Tab[];
   active: Tab;
   hovering?: boolean;
+}
+
+export const FadeInDiv: React.FC<FadeInDivProps> = ({
+  className,
+  tabs,
+  hovering,
 }) => {
-  const isActive = (tab: Tab) => {
-    return tab.value === tabs[0].value;
-  };
+  const isActive = (tab: Tab) => tab.value === tabs[0].value;
+
   return (
     <div className="relative w-full h-full">
       {tabs.map((tab, idx) => (
@@ -111,9 +109,7 @@ export const FadeInDiv = ({
             zIndex: -idx,
             opacity: idx < 3 ? 1 - idx * 0.1 : 0,
           }}
-          animate={{
-            y: isActive(tab) ? [0, 40, 0] : 0,
-          }}
+          animate={{ y: isActive(tab) ? [0, 40, 0] : 0 }}
           className={cn("w-full h-full absolute top-0 left-0", className)}
         >
           {tab.content}

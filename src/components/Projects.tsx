@@ -2,12 +2,10 @@
 import React from "react";
 import { Tabs } from "./ui/tabs";
 import Image from "next/image";
-import obys from "@/components/icons/obys.png";
-import obys_second from "@/components/icons/obys_second.png"
-import netflix_homepage from "@/components/icons/netflix_homepage.png";
-import netflix_login from "@/components/icons/netflix_login.png"
-import BharatBulletin from "@/components/icons/BharatBulletin.png";
-import BharatBulletin_second from "@/components/icons/BharatBulletin_second.png";
+import { StaticImageData } from "next/image";
+import obys from "../../public/obys.png";
+import netflix_homepage from "../../public/netflix_homepage.png";
+import BharatBulletin from "../../public/BharatBulletin.png";
 
 function AboutMe() {
   const tabs = [
@@ -37,7 +35,7 @@ function AboutMe() {
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
           <p>BharatBulletin</p>
-          <DummyContent imageSrc={BharatBulletin}/>
+          <DummyContent imageSrc={BharatBulletin} />
         </div>
       ),
     },
@@ -56,7 +54,7 @@ function AboutMe() {
 
 // Reusable Dummy Content Component
 interface DummyContentProps {
-  imageSrc: string;
+  imageSrc: StaticImageData;
 }
 
 const DummyContent: React.FC<DummyContentProps> = ({ imageSrc }) => {
@@ -65,12 +63,11 @@ const DummyContent: React.FC<DummyContentProps> = ({ imageSrc }) => {
       src={imageSrc}
       alt="Project Image"
       layout="responsive"
-      width={500}  // Set a default width
+      width={500} // Set a default width
       height={300} // Set a default height
       className="object-cover object-left-top rounded-xl mx-auto"
     />
   );
 };
-
 
 export default AboutMe;

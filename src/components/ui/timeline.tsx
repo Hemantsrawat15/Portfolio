@@ -1,11 +1,9 @@
 "use client";
 import {
-  useMotionValueEvent,
   useScroll,
   useTransform,
   motion,
 } from "motion/react";
-import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
@@ -43,7 +41,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           Changelog from my journey
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-        Check out some of the exciting projects I've been working on!
+        Check out some of the exciting projects I &apos; ve been working on!
         </p>
       </div>
 

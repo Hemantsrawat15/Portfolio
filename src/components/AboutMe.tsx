@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image"; // Importing Image from Next.js
 import { StarsBackground } from "@/components/ui/stars-background";
-import hemant from "@/components/icons/hemant.png"
+import hemant from "@/components/icons/hemant.png";
 
 function AboutMe() {
   return (
@@ -12,13 +12,13 @@ function AboutMe() {
 
       {/* Content with higher z-index */}
       <div className="relative z-10 h-[70%] w-[40%] flex flex-col p-10">
-        <h1 className="text-6xl font-bold text-white">Hi, I'm Hemant</h1>
+        <h1 className="text-6xl font-bold text-white">Hi, I&apos;m Hemant</h1>
         <p className="mt-4 text-lg text-gray-300">
           I believe in a user-centered design approach, ensuring that every
           project I work on is tailored to meet the specific needs of its users.
         </p>
         <p className="mt-6 text-lg text-gray-300">
-          I'm a frontend web developer dedicated to turning ideas into creative
+          I&apos;m a frontend web developer dedicated to turning ideas into creative
           solutions. I specialize in creating seamless and intuitive user
           experiences. My approach focuses on building scalable, high-performing
           solutions tailored to both user needs and business objectives. By
