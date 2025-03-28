@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image"; // Importing Image from Next.js
 import { StarsBackground } from "@/components/ui/stars-background";
-import Hemant from "../components/icons/Hemant.jpg"
+import hemant from "@/components/icons/hemant.png"
 
 function AboutMe() {
   return (
@@ -31,7 +31,7 @@ function AboutMe() {
       {/* Image Section */}
       <div className="relative z-10 h-[70%] w-[40%] flex items-center justify-center">
         <Image
-          src={Hemant} // Replace with your actual image path
+          src={hemant} // Replace with your actual image path
           alt="Hemant Singh Rawat"
           width={400} // Set the width of the image
           height={400} // Set the height of the image
