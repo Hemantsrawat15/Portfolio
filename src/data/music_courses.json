@@ -1,0 +1,65 @@
+{
+    "courses": [
+      {
+        "id": 1,
+        "title": "Guitar Fundamentals",
+        "slug": "guitar-fundamentals",
+        "description": "Learn the basics of playing guitar with our comprehensive beginner's course.",
+        "price": 99.99,
+        "instructor": "John Doe",
+        "isFeatured": true,
+        "image": "/courses/guitar.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Piano for Beginners",
+        "slug": "piano-for-beginners",
+        "description": "Start your musical journey with this beginner-friendly piano course covering basic notes, chords, and techniques.",
+        "price": 89.99,
+        "instructor": "Jane Smith",
+        "isFeatured": false,
+        "image": "/courses/piano.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Violin Essentials",
+        "slug": "violin-essentials",
+        "description": "Master the fundamentals of violin playing with step-by-step guidance and exercises.",
+        "price": 79.99,
+        "instructor": "Emily Davis",
+        "isFeatured": false,
+        "image": "/courses/violin.jpg"
+      },
+      {
+        "id": 4,
+        "title": "Drumming Basics",
+        "slug": "drumming-basics",
+        "description": "Learn essential drumming techniques and rhythms to build your skills as a drummer.",
+        "price": 69.99,
+        "instructor": "Michael Johnson",
+        "isFeatured": true,
+        "image": "/courses/drums.jpg"
+      },
+      {
+        "id": 5,
+        "title": "Music Theory 101",
+        "slug": "music-theory-101",
+        "description": "Understand the basics of music theory, including scales, chords, and reading sheet music.",
+        "price": 59.99,
+        "instructor": "Sarah Wilson",
+        "isFeatured": false,
+        "image": "/courses/music-theory.jpg"
+      },
+      {
+        "id": 6,
+        "title": "Advanced Singing Techniques",
+        "slug": "advanced-singing",
+        "description": "Improve your vocal range, control, and techniques with this advanced singing course.",
+        "price": 109.99,
+        "instructor": "David Lee",
+        "isFeatured": true,
+        "image": "/courses/singing.jpg"
+      }
+    ]
+  }
+  
